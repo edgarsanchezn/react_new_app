@@ -24,7 +24,9 @@ export default function Login() {
    
 
 
-  let sendinfo = () => {
+  let sendinfo = (e) => {
+e.preventDefault();
+
     api.request(reqOptions)
     .then(function (response) {
         console.log(response.data);
@@ -33,14 +35,14 @@ export default function Login() {
       })
   };
   return (
-    <form className="w-full text-center">
-      <div className="mt-40 mx-48 md:w-96 border p-4 rounded bg-gray-200">
+    <form className="w-full h-screen text-center pt-40">
+      <div className="mx-48 md:w-96 border p-4 rounded bg-gray-200">
         Login
         <div className="p-4 text-left">
           <div>email:</div>
           <div>
             <input
-              value="{email}"
+              defaultValue={email}
               className="w-full my-2 bg-gray-100"
               type="text"
               name="email"
@@ -53,7 +55,7 @@ export default function Login() {
           
             <input
               type="password"
-              value="{password}"
+              defaultValue={password}
               className="w-full my-2 bg-gray-100"
               name="password"
             />

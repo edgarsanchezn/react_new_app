@@ -1,13 +1,17 @@
 import Formulario from './components/Formulario/index'
+import Login from './components/Login/index'
+
 
 function App(props) {
-  return <div className="flex bg-gray-400 w-full h-screen">
-    <div className="w-72 p-8">
-      <span className="font-bold text-xl">Add Member</span>
-    
+  return <div className="bg-gray-400 w-full h-screen ">
+    <div>
+    <Login  />
     </div>
-    <Formulario />
-  
+    <div className="hidden">
+
+    <Formulario  />
+    </div>
+  <div></div>
   </div>;
 }
 
